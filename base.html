@@ -1,0 +1,30 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Warehouse App{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">Warehouse Tracker</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="{% url 'add_product' %}">Add Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'add_in_transaction' %}">Add IN</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'add_out_transaction' %}">Add OUT</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'add_stock_detail' %}">Add Stock Detail</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'inventory' %}">Inventory</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Add Product{% endblock %}
+
+{% block content %}
+<h2>Add Product</h2>
+<form method="POST" class="mt-3">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Product Code</label>
+        <input type="text" name="prodcode" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Product Name</label>
+        <input type="text" name="prodname" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Unit</label>
+        <input type="text" name="unit" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Rate</label>
+        <input type="number" step="0.01" name="rate" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+{% endblock %}
